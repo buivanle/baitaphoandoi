@@ -1,0 +1,30 @@
+import 'dart:io';
+import 'dart:math';
+
+void main() {
+  final phones = <String>['Nokia', 'Xiaomi', 'iPhone'];
+
+  print(phones);
+  print(
+      '${identityHashCode(phones[0])} - ${identityHashCode(phones[1])} - ${identityHashCode(phones[2])}');
+
+  // viết code ở đây, đổi vị trí Xiaomi và iPhone
+  // var temp = phones[1];
+  // phones[1] = temp;
+  // phones[2] = 'Xiaomi';
+
+  //dùng biến tạm
+  var temp = phones[1];
+  phones[1] = phones[2];
+  phones[2] = temp;
+
+  //không dùng biến tạm
+
+  phones[1] = phones[1] + phones[2];
+  phones[1] = phones[1] - phones[2];
+  phones[2] = phones[2] - phones[1];
+
+  print(phones);
+  print(
+      '${identityHashCode(phones[0])} - ${identityHashCode(phones[1])} - ${identityHashCode(phones[2])}');
+}
